@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   act=0;
   if (crm){
 	  act = crm.getArg('ACT', crm.url());
-	  if (act!=140 && act!=141)
+	  if (act!=140)
 	  {
 		  console.log("script AI-Prompt-And-Paste: act is invalid/"+act);
 		  return;
@@ -100,10 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Instructional span
 	const instruction2 = document.createElement("span");
-	if (act==140)
-		instruction2.textContent = 'SAMPLE PROMPT FOR YOUR LLM OF CHOICE (EG OPENAI, CLAUDE ETC): Can you lookup INSERT_URL_HERE and provide me simple json (name value) with the company name title as "comp_name" and the address broken up as "addr_address1","addr_address2","addr_address3","addr_address4", "addr_city", "addr_state", "addr_country" and email as "comp_emailaddress" and phone number as "comp_phonenumber" and website as "comp_website"? If possible can you also get the name of a high level person who works there and fill in the details as "pers_firstname"; for their firstname and "pers_lastname" for their last name and "pers_emailaddress" for their email?';
-	if (act==141)
-		instruction2.textContent = 'SAMPLE PROMPT FOR YOUR LLM OF CHOICE (EG OPENAI, CLAUDE ETC): Can you lookup INSERT_URL_HERE and provide me simple json (name value) or the person with the details as "pers_firstname"; for their firstname and "pers_lastname" for their last name and "pers_emailaddress and phone number as "pers_phonenumber" and website as "pers_website" (the website for this person might be a Linkedin url) for their email? The address should be broken up as "addr_address1","addr_address2","addr_address3","addr_address4", "addr_city", "addr_state", "addr_country"?';	
+
+		instruction2.textContent = 'SAMPLE PROMPT FOR YOUR LLM OF CHOICE (EG OPENAI, CLAUDE ETC): Can you lookup INSERT_URL_HERE and provide me simple json (name value) with the company name title as "comp_name" and the address broken up as "addr_address1","addr_address2","addr_address3","addr_address4", "addr_city", "addr_state", "addr_country" and email as "emai_emailaddressbusiness" and phone number as "phon_numberbusiness" and website as "comp_website"? If possible can you also get the name of a high level person who works there and fill in the details as "pers_firstname"; for their firstname and "pers_lastname" for their last name and "persEmai_EmailAddressBusiness" for their email?';
+
 	instruction2.style.display = "block";
 	instruction2.style.marginBottom = "8px";
 	instruction2.style.fontSize = "14px";
